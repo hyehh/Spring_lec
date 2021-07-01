@@ -37,7 +37,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping("/write")
+	@RequestMapping("write")
 	public String write() {
 		return "board/write";
 	}

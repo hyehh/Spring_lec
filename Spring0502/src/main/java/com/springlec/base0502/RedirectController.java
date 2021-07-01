@@ -14,20 +14,20 @@ public class RedirectController {
 		
 		String id = httpServletRequest.getParameter("id");
 		if(id.equals("abc")) {
-			// redirect´Â Å°¿öµåÀÓ! Àú·¸°Ô º¸³»Áà¾ß ÇÏ´Â ¹æ½ÄÀÓ!(requestmappingÀ¸·Î redirectÇØ¶ó!)
+			// redirect ê¼­ ì¨ì£¼ê¸°!
 			return "redirect:studentOK";
 		}else {
 			return "redirect:studentNG";
 		}
 	}
 	
-	// redirect:studentOK ¿©±âÀÓ
+	// redirect:studentOK ê°€ ì—¬ê¸°ë¡œ ë“¤ì–´ì˜´!
 	@RequestMapping("studentOK")
 	public String ok(Model model) {
 		return "student/studentOK";
 	}
 	
-	// redirect:studentNG ¿©±âÀÓ
+	// redirect:studentNG ê°€ ì—¬ê¸°ë¡œ ë“¤ì–´ì˜´!
 	@RequestMapping("studentNG")
 	public String ng(Model model) {
 		return "student/studentNG";

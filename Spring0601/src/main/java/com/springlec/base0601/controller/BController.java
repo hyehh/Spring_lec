@@ -28,7 +28,7 @@ public class BController {
 	}
 
 	@RequestMapping("/write_view")
-	public String write_view(Model model) {
+	public String write_view() {
 		System.out.println("write_view()");
 		return "write_view";
 	}

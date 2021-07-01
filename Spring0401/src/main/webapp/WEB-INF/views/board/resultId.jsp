@@ -7,7 +7,7 @@
 <title>Result ID</title>
 </head>
 <body>
-	ID : ${id } <br>
+	ID : ${studentid } <br>
 	PW : ${pw }
 </body>
 </html>

@@ -45,7 +45,7 @@ public class HomeController {
 		String id = httpServletRequest.getParameter("id");
 		String pw = httpServletRequest.getParameter("pw");
 		
-		model.addAttribute("id", id);
+		model.addAttribute("studentid", id);
 		model.addAttribute("pw", pw);
 		
 		return "board/resultId";
@@ -54,7 +54,7 @@ public class HomeController {
 	// 위와 같은 결과물, 다른 방식으로 작업 (이 방식은 받는 값이 많을 경우 사용 지양)  
 	@RequestMapping("board/checkId")
 	public String checkId(@RequestParam("id") String id, @RequestParam("pw") int pw, Model model) {
-		model.addAttribute("id", id);
+		model.addAttribute("studentid", id);
 		model.addAttribute("pw", pw);
 		
 		return "board/resultId";

@@ -4,12 +4,20 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import com.springlec.base0702.dao.BDao;
 
 public class BDeleteCommand implements BCommand {
 
+	private BDao dao = null;
+	
+	@Autowired
+	public void daoAuto(BDao dao) {
+		this.dao = dao;
+	}
+	
 	@Override
 	public void execute(Model model) {
 		// TODO Auto-generated method stub
@@ -19,7 +27,6 @@ public class BDeleteCommand implements BCommand {
 		
 		String bId = httpServletRequest.getParameter("bId");
 		
-		BDao dao = new BDao();
 		dao.delete(bId);
 	}
 

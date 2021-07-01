@@ -18,6 +18,9 @@ import com.springlec.base0702.util.Constant;
 public class BController {
 
 	BCommand command = null;
+	private BCommand listCommand = null;
+	private BCommand writeCommand = null;
+	private BCommand deleteCommand = null;
 	JdbcTemplate template = null;
 	
 	@Autowired
@@ -26,10 +29,16 @@ public class BController {
 		Constant.template = this.template;
 	}
 	
+	@Autowired
+	public void commandAuto(BCommand list, BCommand write, BCommand delete) {
+		this.listCommand = list;
+		this.writeCommand = write;
+		this.deleteCommand = delete;
+	}
+	
 	@RequestMapping("list")
 	public String list(Model model) {
-		command = new BListCommand();
-		command.execute(model);
+		listCommand.execute(model);
 		return "list";
 	}
 	
@@ -41,16 +50,14 @@ public class BController {
 	@RequestMapping("writeAdd")
 	public String writeAdd(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
-		command = new BWriteCommand();
-		command.execute(model);
+		writeCommand.execute(model);
 		return "redirect:list";
 	}
 	
 	@RequestMapping("delete")
 	public String delete(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
-		command = new BDeleteCommand();
-		command.execute(model);
+		deleteCommand.execute(model);
 		return "redirect:list";
 	}
 	

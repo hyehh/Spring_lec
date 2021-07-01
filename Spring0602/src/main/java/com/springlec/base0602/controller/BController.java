@@ -24,6 +24,7 @@ public class BController {
 	private BCommand updateCommand = null;
 	private BCommand deleteCommand = null;
 	
+	// 이 태그를 사용해야 di 사용가능!! 이게 servlet에 있는지 검사해줌!!
 	@Autowired
 	public void auto(BCommand list, BCommand write, BCommand select, BCommand update, BCommand delete) { 
 		this.listCommand = list;

@@ -34,4 +34,10 @@
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean>
 	
+	<beans:bean name = "list" class="com.springlec.base0702.command.BListCommand"></beans:bean>
+	<beans:bean name = "write" class="com.springlec.base0702.command.BWriteCommand"></beans:bean>
+	<beans:bean name = "delete" class="com.springlec.base0702.command.BDeleteCommand"></beans:bean>
+	
+	<beans:bean name = "dao" class="com.springlec.base0702.dao.BDao"></beans:bean>
+	
 </beans:beans>
